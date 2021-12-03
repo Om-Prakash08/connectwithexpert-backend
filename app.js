@@ -1,7 +1,7 @@
 const express = require("express");
 var email = require("emailjs");
 const app = express();
-
+require('dotenv').config() ;
 // For parsing application/json
 app.use(express.json());
 
@@ -16,7 +16,7 @@ app.use((req,res,next) =>{
 
 var server = new email.SMTPClient({
   user: "connectwithexpert21@gmail.com",
-  password: "vtkovqbdwjoukint",
+  password: process.env.password,
   host: "smtp.gmail.com",
   ssl: true,
 });
