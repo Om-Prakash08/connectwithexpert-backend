@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 let server = new email.SMTPClient({
   user: "connectwithexpert21@gmail.com",
-  password: process.env.password,
+  password: process.env.SMTPClientPassword,
   host: "smtp.gmail.com",
   ssl: true,
 });
