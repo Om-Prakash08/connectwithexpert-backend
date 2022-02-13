@@ -19,7 +19,7 @@ const router = require("./routes/routes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const PORT = process.env.PORT || 8000;
+
 
 app.get("/test", (req, res) => {
   res.json({
@@ -73,6 +73,7 @@ app.post("/sendMail", function (req, res) {
 
 app.use("/api", router);
 
+const PORT = process.env.PORT || 8000;
 const start = async (req, res) => {
   await connectDB(process.env.MONGO_URI);
   try {
